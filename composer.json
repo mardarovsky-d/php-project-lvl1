@@ -1,7 +1,7 @@
 {
     "name": "hexlet/code",
     "description": "I'm learning PHP",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mardarovsky",
@@ -11,5 +11,12 @@
     "bin": [
         "bin/brain-games"
     ],
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.13"
+    },
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    }
 }
