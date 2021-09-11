@@ -1,0 +1,9 @@
+name: GitHub Actions
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run linter
+        lint: make lint
