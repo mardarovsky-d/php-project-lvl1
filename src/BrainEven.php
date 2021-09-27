@@ -10,13 +10,29 @@ function brainEven()
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    $num = rand(1, 99);
     line("Answer \"yes\" if the number is even, otherwise answer \"no\".");
-    line("Question: $num");
-    $answer = prompt("Your answer");
-    if ($num % 2 !== 0 || $answer === 'yes') {
-        line("Correct!");
-    } elseif ($num % 2 !== 0 || $answer === 'no') {
-        line("$answer is wrong answer ;(. Correct answer was 'no'. \n Let's try again, %s!", $name);
+    $gamesCount = 3;
+    $victoryCount = 0;
+    for ($i = 0; $i < $gamesCount; $i++) {
+        $num = rand(1, 99);
+        line("Question: $num");
+        $answer = prompt("Your answer");
+        $wrong = "{$answer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, %s!";
+        if ($num % 2 !== 0 && $answer === 'no') {
+            line("$wrong", $name);
+            break;
+        } elseif ($num % 2 !== 0 && $answer !== 'yes') {
+            line("$wrong", $name);
+            break;
+        } elseif ($num % 2 === 0 && $answer !== 'no') {
+            line("$wrong", $name);
+            break;
+        } else {
+            line("Correct!");
+            $victoryCount += 1;
+        }
+    }
+    if ($victoryCount === $gamesCount) {
+        line("Congratulations, %s!", $name);
     }
 }
