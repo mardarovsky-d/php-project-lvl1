@@ -11,17 +11,20 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.13"
+        "wp-cli/php-cli-tools": "^0.11.13",
+        "ext-gmp": "*"
     },
     "autoload": {
         "files": [
             "src/Cli.php",
             "src/Engine.php",
             "src/Games/BrainEven.php",
-            "src/Games/BrainCalc.php"
+            "src/Games/BrainCalc.php",
+            "src/Games/BrainGCD.php"
         ]
     },
     "require-dev": {
