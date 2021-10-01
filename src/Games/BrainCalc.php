@@ -8,8 +8,7 @@ use function Brain\Engine\game;
 function brainCalc()
 {
     $question = "What is the result of the expression?";
-
-    $task = function() {
+    $task = function () {
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
         $randomOperation = rand(1, 3);
