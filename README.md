@@ -4,3 +4,4 @@
 ![Actions](https://github.com/mardarovsky-d/php-project-lvl1/actions/workflows/actions.yml/badge.svg)
 [![asciicast](https://asciinema.org/a/SJUzlsgPcDzULuL9vbMGvfj8P.png)](https://asciinema.org/a/SJUzlsgPcDzULuL9vbMGvfj8P)
 [![asciicast](https://asciinema.org/a/Xb1JOMUYG3DJbRr4fNAJWoKPb.png)](https://asciinema.org/a/Xb1JOMUYG3DJbRr4fNAJWoKPb)
+[![asciicast](https://asciinema.org/a/dldp1oDQVhKWDB4WGHTy07ZnC.png)](https://asciinema.org/a/dldp1oDQVhKWDB4WGHTy07ZnC)

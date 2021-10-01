@@ -18,11 +18,13 @@ function brainGCD()
         line("$num1 $num2");
         $a = abs($num1);
         $b = abs($num2);
-        while ($a != $b)
-            if ($a>$b)
+        while ($a !== $b) {
+            if ($a > $b) {
                 $a -= $b;
-            else
+            } else {
                 $b -= $a;
+            }
+        }
         return $a;
     };
 
