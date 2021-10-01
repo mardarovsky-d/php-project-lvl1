@@ -15,7 +15,7 @@ function brainGCD()
             $num1 = rand(-99, 99);
             $num2 = rand(-99, 99);
         }
-        line("$num1 $num2");
+        line("Question: $num1 $num2");
         $a = abs($num1);
         $b = abs($num2);
         while ($a !== $b) {
