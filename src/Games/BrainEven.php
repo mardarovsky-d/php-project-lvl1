@@ -18,13 +18,13 @@ function brainEven()
         line("Question: $num");
         $answer = prompt("Your answer");
         $wrong = "$answer is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, %s!";
-        if ($num % 2 !== 0 && $answer === 'no') {
+        if ($num % 2 === 0 && $answer === 'no') {
             line("$wrong", $name);
             break;
-        } elseif ($num % 2 !== 0 && $answer !== 'yes') {
+        } elseif ($num % 2 === 0 && $answer !== 'yes') {
             line("$wrong", $name);
             break;
-        } elseif ($num % 2 === 0 && $answer !== 'no') {
+        } elseif ($num % 2 !== 0 && $answer !== 'no') {
             line("$wrong", $name);
             break;
         } else {
