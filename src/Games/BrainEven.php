@@ -17,7 +17,7 @@ function brainEven()
         $num = rand(1, 99);
         line("Question: $num");
         $answer = prompt("Your answer");
-        $wrong = "{$answer} is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, %s!";
+        $wrong = "$answer is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, %s!";
         if ($num % 2 !== 0 && $answer === 'no') {
             line("$wrong", $name);
             break;
