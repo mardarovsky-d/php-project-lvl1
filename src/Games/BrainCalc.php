@@ -16,10 +16,10 @@ function brainCalc()
             line("Question: $num1 + $num2");
             return $num1 + $num2;
         } elseif ($randomOperation === 2) {
-            line("$num1 * $num2");
+            line("Question: $num1 * $num2");
             return $num1 * $num2;
         } else {
-            line("$num1 - $num2");
+            line("Question: $num1 - $num2");
             return $num1 - $num2;
         }
     };
