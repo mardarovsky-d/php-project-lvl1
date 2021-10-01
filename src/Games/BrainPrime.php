@@ -11,12 +11,15 @@ function brainPrime()
     $task = function () {
         $num = rand(1, 99);
         line("Question: $num");
-        $result = 'no';
-        for ($i = 2; $i <= $num; $i++) {
-            if ($num % $i === 0) {
-                $result = 'no';
-            } else {
+        $result = '';
+        if ($num === 1 || $num === 2) {
+            $result = 'yes';
+        }
+        for ($i = 2; $i < $num; $i++) {
+            if ($num % $i !== 0) {
                 $result = 'yes';
+            } else {
+                return 'no';
             }
         }
         return $result;
