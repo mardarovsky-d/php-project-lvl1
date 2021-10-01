@@ -13,11 +13,13 @@ function game($question, $task)
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line("$question");
-    for ($i = 0; $i < $gamesCount; $i++) {
+    $continue = true;
+    for ($i = 0; $i < $gamesCount && $continue === true; $i++) {
         $correct = $task();
         $answer = prompt("Your answer");
         if (intval($answer) !== $correct) {
             line("$answer is wrong answer ;(. Correct answer was $correct.\nLet's try again, %s!", $name);
+            $continue = false;
         } else {
             line("Correct!");
             $victoryCount++;
