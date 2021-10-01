@@ -9,8 +9,8 @@ function brainProgression()
 {
     $question = "What number is missing in the progression?";
     $task = function () {
-        $randomPlus = rand(1, 5); // 2
-        $numCount = rand(5, 10); // 5
+        $randomPlus = rand(1, 5);
+        $numCount = rand(6, 10);
         $beginning = rand(1, 10);
         $progression = [];
         for ($i = 1; $i <= $numCount; $i++) {
