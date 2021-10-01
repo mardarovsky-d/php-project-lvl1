@@ -17,7 +17,7 @@ function game($question, $task)
     for ($i = 0; $i < $gamesCount && $continue === true; $i++) {
         $correct = $task();
         $answer = prompt("Your answer");
-        if (intval($answer) !== $correct) {
+        if ($answer != $correct) {
             line("$answer is wrong answer ;(. Correct answer was $correct.\nLet's try again, %s!", $name);
             $continue = false;
         } else {
