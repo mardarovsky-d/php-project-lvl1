@@ -8,7 +8,7 @@ use function Brain\Engine\game;
 function brainProgression(): void
 {
     $question = "What number is missing in the progression?";
-    $task = function () {
+    $task = function (): int {
         $randomPlus = rand(1, 5);
         $numCount = rand(6, 10);
         $beginning = rand(1, 10);

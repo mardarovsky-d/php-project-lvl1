@@ -5,7 +5,7 @@ namespace Brain\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function game(string $question, object $task): void
+function game(string $question, mixed $task): void
 {
     $victoryCount = 0;
     $gamesCount = 3;
