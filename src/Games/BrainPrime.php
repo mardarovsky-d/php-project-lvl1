@@ -12,7 +12,10 @@ function brainPrime(): void
         $num = rand(1, 99);
         line("Question: $num");
         $result = '';
-        if ($num === 1 || $num === 2) {
+        if ($num === 1) {
+            $result = 'no';
+        }
+        if ($num === 2) {
             $result = 'yes';
         }
         for ($i = 2; $i < $num; $i++) {
