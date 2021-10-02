@@ -19,7 +19,7 @@ function brainProgression()
         }
         $missingNum = rand(2, $numCount - 1);
         $result = $progression[$missingNum];
-        $progression[$missingNum] = "...";
+        $progression[$missingNum] = "..";
         $progressionForTask = implode(" ", $progression);
         line("Question: $progressionForTask");
         return $result;
