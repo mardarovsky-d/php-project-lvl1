@@ -18,7 +18,7 @@ function game($question, $task)
         $correct = $task();
         $answer = prompt("Your answer");
         if ($answer != $correct) {
-            line("$answer is wrong answer ;(. Correct answer was $correct.\nLet's try again, %s!", $name);
+            line("'$answer' is wrong answer ;(. Correct answer was '$correct'.\nLet's try again, %s!", $name);
             $continue = false;
         } else {
             line("Correct!");
