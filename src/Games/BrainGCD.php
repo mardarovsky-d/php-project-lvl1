@@ -5,7 +5,7 @@ namespace Brain\Games\BrainGCD;
 use function cli\line;
 use function Brain\Engine\game;
 
-function brainGCD()
+function brainGCD(): void
 {
     $question = "Find the greatest common divisor of given numbers.";
     $task = function () {

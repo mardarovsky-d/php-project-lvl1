@@ -5,7 +5,7 @@ namespace Brain\Games\BrainPrime;
 use function cli\line;
 use function Brain\Engine\game;
 
-function brainPrime()
+function brainPrime(): void
 {
     $question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $task = function () {

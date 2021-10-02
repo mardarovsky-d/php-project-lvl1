@@ -5,10 +5,10 @@ namespace Brain\Games\BrainCalc;
 use function cli\line;
 use function Brain\Engine\game;
 
-function brainCalc()
+function brainCalc(): void
 {
     $question = "What is the result of the expression?";
-    $task = function () {
+    $task = function (): int {
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
         $randomOperation = rand(1, 3);

@@ -5,7 +5,7 @@ namespace Brain\Games\BrainProgression;
 use function cli\line;
 use function Brain\Engine\game;
 
-function brainProgression()
+function brainProgression(): void
 {
     $question = "What number is missing in the progression?";
     $task = function () {
