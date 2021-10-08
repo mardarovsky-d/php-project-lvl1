@@ -7,12 +7,8 @@ use function Brain\Engine\game;
 function brainGCD(): void
 {
     $question = "Find the greatest common divisor of given numbers.";
-
-    $task = function (): array {
-        $taskData = [];
-        $num1 = rand(-99, 99);
-        $num2 = rand(-99, 99);
-        $taskData[] = "$num1 $num2";
+    function calculations(int $num1, int $num2): string
+    {
         if ($num1 === 0 || $num2 === 0) {
             $num1 = rand(-99, 99);
             $num2 = rand(-99, 99);
@@ -26,8 +22,12 @@ function brainGCD(): void
                 $b -= $a;
             }
         }
-        $taskData[] = "$a";
-        return $taskData;
+        return "$a";
+    }
+    $task = function (): array {
+        $num1 = rand(-99, 99);
+        $num2 = rand(-99, 99);
+        return ["$num1 $num2", calculations($num1, $num2)];
     };
 
     game($question, $task);
