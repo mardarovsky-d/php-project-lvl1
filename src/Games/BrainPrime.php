@@ -2,30 +2,33 @@
 
 namespace Brain\Games\BrainPrime;
 
-use function cli\line;
 use function Brain\Engine\game;
 
 function brainPrime(): void
 {
     $question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    $task = function () {
-        $num = rand(1, 99);
-        line("Question: $num");
+    function calculations(int $primeNum): string
+    {
+        if ($primeNum === 1) {
+            return 'no';
+        }
+        if ($primeNum === 2) {
+            return 'yes';
+        }
         $result = '';
-        if ($num === 1) {
-            $result = 'no';
-        }
-        if ($num === 2) {
-            $result = 'yes';
-        }
-        for ($i = 2; $i < $num; $i++) {
-            if ($num % $i !== 0) {
+        for ($i = 2; $i < $primeNum; $i++) {
+            if ($primeNum % $i !== 0) {
                 $result = 'yes';
             } else {
                 return 'no';
             }
         }
         return $result;
+    }
+
+    $task = function (): array {
+        $num = rand(1, 99);
+        return ["$num", calculations($num)];
     };
 
     game($question, $task);

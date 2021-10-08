@@ -5,7 +5,7 @@ namespace Brain\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function game(string $question, mixed $task): void
+function game(string $question, callable $task): void
 {
     $victoryCount = 0;
     $gamesCount = 3;
@@ -13,19 +13,18 @@ function game(string $question, mixed $task): void
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line("$question");
-    $continue = true;
-    for ($i = 0; $i < $gamesCount && $continue === true; $i++) {
-        $correct = $task();
+    for ($i = 0; $i < $gamesCount; $i++) {
+        $taskText = $task();
+        line("Question: $taskText[0]");
+        $correct = $taskText[1];
         $answer = prompt("Your answer");
-        if ($answer != $correct) {
+        if ($answer !== $correct) {
             line("'$answer' is wrong answer ;(. Correct answer was '$correct'.\nLet's try again, %s!", $name);
-            $continue = false;
+            return;
         } else {
             line("Correct!");
             $victoryCount++;
         }
     }
-    if ($victoryCount === $gamesCount) {
-        line("Congratulations, %s!", $name);
-    }
+    line("Congratulations, %s!", $name);
 }

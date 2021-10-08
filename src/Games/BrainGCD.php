@@ -2,20 +2,21 @@
 
 namespace Brain\Games\BrainGCD;
 
-use function cli\line;
 use function Brain\Engine\game;
 
 function brainGCD(): void
 {
     $question = "Find the greatest common divisor of given numbers.";
-    $task = function (): int {
+
+    $task = function (): array {
+        $taskData = [];
         $num1 = rand(-99, 99);
         $num2 = rand(-99, 99);
+        $taskData[] = "$num1 $num2";
         if ($num1 === 0 || $num2 === 0) {
             $num1 = rand(-99, 99);
             $num2 = rand(-99, 99);
         }
-        line("Question: $num1 $num2");
         $a = abs($num1);
         $b = abs($num2);
         while ($a !== $b) {
@@ -25,7 +26,8 @@ function brainGCD(): void
                 $b -= $a;
             }
         }
-        return $a;
+        $taskData[] = "$a";
+        return $taskData;
     };
 
     game($question, $task);
