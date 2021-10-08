@@ -2,28 +2,30 @@
 
 namespace Brain\Games\BrainProgression;
 
-use function cli\line;
 use function Brain\Engine\game;
 
 function brainProgression(): void
 {
     $question = "What number is missing in the progression?";
-    $task = function (): string {
-        $taskData = [];
-        $randomPlus = rand(1, 5);
-        $numCount = rand(6, 10);
-        $beginning = rand(1, 10);
+    function makeProgression($beginsWith, $count, $plus): array
+    {
         $progression = [];
-        for ($i = 1; $i <= $numCount; $i++) {
-            $beginning += $randomPlus;
-            $progression[] = $beginning;
+        for ($i = 1; $i <= $count; $i++) {
+            $beginsWith += $plus;
+            $progression[] = $beginsWith;
         }
-        $missingNum = rand(2, $numCount - 1);
-        $result = $progression[$missingNum];
+        return $progression;
+    }
+    $task = function (): array {
+        $progressionBeginning = rand(1, 10);
+        $progressionLength = rand(6, 10);
+        $randomPlus = rand(1, 5);
+        $progression = makeProgression($progressionBeginning, $progressionLength, $randomPlus);
+        $missingNum = rand(2, $progressionLength - 1);
+        $answer = $progression[$missingNum];
         $progression[$missingNum] = "..";
         $progressionForTask = implode(" ", $progression);
-        line("Question: $progressionForTask");
-        return "$result";
+        return [$progressionForTask, "$answer"];
     };
 
     game($question, $task);
